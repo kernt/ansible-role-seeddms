@@ -1,0 +1,26 @@
+--- 
+# basic configuration for alls systems 
+- import_playbook: localhost.yml 
+# Basic configuration for Cluster Managered Systems
+- import_playbook: hacm.yml
+# Basic Configuration for Storage Cluster
+- import_playbook: hasm.yml
+
+# Gluster FS Configuration
+# -import_playbook: gluster-cluster.yml
+
+# Drbd sm configuration
+# -import_playbook: drbd-sm.yml 
+
+# drbd mm configuration 
+# -import_playbook: srbd-mm.yml 
+
+# GFS2 Cluster Configuration 
+
+# Apache2 Cluster Configuration 
+#- import_playbook: apache2-cluster.yml
+
+# Apache Tomcat Cluster Configuration 
+
+# Mysql Cluster 
+#- import_playbook: maysql-cluster.yml 
