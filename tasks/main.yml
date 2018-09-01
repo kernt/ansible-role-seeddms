@@ -1,1 +1,15 @@
 ---
+- include: debian.yml
+  tags:
+    - install_seeddms
+  when: ansible_os_family == "Debian"
+
+- include: redhat.yml
+  tags:
+    - install_seeddms
+  when: ansible_os_family == "RedHat"
+
+- include: opensuse.yml
+  when: ansible_os_family == "openSUSE Leap"
+  
+  
