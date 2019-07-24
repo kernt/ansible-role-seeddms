@@ -1,4 +1,8 @@
 ---
+# Currently not working
+# just a code concept I need more technical background
+# - How can i get vars
+# - How can i set vars via ENVIRONMENT
 QUIKSTART_URL: https://sourceforge.net/projects/seeddms/files/seeddms-5.1.8/seeddms-quickstart-5.1.8.tar.gz
 seddms_mirror: https://sourceforge.net/projects/seeddms/files/
 seddms_version: 5.1.8
@@ -8,8 +12,7 @@ SEEDDMS_CONF: conf/settings.xml
 SEEDMS_LOGIN: admin
 SEEDMS_DIR: /var/www
 
-
-####### Var for seedms config - file: ####### 
+####### Vars for seedms config - file: ####### 
 #siteName: Name of site used in the page titles. Default: SeedDMS
 #footNote: Message to display at the bottom of every page
 #printDisclaimer: if true the disclaimer message the lang.inc files will be print on the bottom of the page
@@ -19,29 +22,30 @@ SEEDMS_DIR: /var/www
 
 # display Settings
 previewWidthDetail: Preview image width in document view
-DISPLAY_SITENAME: {{  }}
-DISPLAY_FOOTNOTE: {{ }}
+DISPLAY_SITENAME: "{{ ansible_hostname }}"
+DISPLAY_FOOTNOTE: "Copyright "
 DISPLAY_PRINTDISCLAIMER: "true"
-DISPLAY_LANGUAGE: "an_GB"
+DISPLAY_LANGUAGE: "de_DE"
 DISPLAY_THEME: "bootstrap"
 DISPLAY_PREVIEWWITHLIST: "40"
 DISPLAY_PREVIEWWITHDETAIL: "100"
 
-# edition Settings
-EDITION_STRICTFORMCHECK
-EDITION_VIEWONLINEFILETYPES
-EDITION_ENABLECONVERTING
-EDITION_ENABLEEMAIL
-EDITION_ENABLEUSERSVIEW
-EDITION_ENABLECLIPBOARD
-EDITION_ENABLEFOLDERTREE
-EDITION_EXPANDFOLDERTREE
-EDITION_ENABLELANGUAGESELECT
-EDITION_STOPWORDSFILE
-EDITION_SORTUSERSINLIST
-EDITION_ENABLEDROPUPLOAD
-EDITION_ENABLERECURSIVECOUNT
-EDITION_MAXRECURSIVECOUNT
-EDITION_ENABLETHEMESELECTOR
-EDITION_FULLSEARCHENGINE
-EDITION_SORTFOLDERSDEFAULT
+# edition Settings push to ansible ENVIRONMENT
+ENVIRONMENT: 
+  - EDITION_STRICTFORMCHECK
+  - EDITION_VIEWONLINEFILETYPES
+  - EDITION_ENABLECONVERTING
+  - EDITION_ENABLEEMAIL
+  - EDITION_ENABLEUSERSVIEW
+  - EDITION_ENABLECLIPBOARD
+  - EDITION_ENABLEFOLDERTREE
+  - EDITION_EXPANDFOLDERTREE
+  - EDITION_ENABLELANGUAGESELECT
+  - EDITION_STOPWORDSFILE
+  - EDITION_SORTUSERSINLIST
+  - EDITION_ENABLEDROPUPLOAD
+  - EDITION_ENABLERECURSIVECOUNT
+  - EDITION_MAXRECURSIVECOUNT
+  - EDITION_ENABLETHEMESELECTOR
+  - EDITION_FULLSEARCHENGINE
+  - EDITION_SORTFOLDERSDEFAULT
