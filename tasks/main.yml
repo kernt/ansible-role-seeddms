@@ -12,12 +12,12 @@
 - include: opensuse.yml
   when: ansible_os_family == "openSUSE Leap"
 
-- name: Download seddms (remote)
+- name: Download seddms via URL
   tags: seddms
     get_url:
-      dest: "{{ ansible_data_path }}/{{ geoserver_redis_filename }}"
-      url: "{{ seddms_mirror }}/{{ seddms_version }}/{{ seddms_filename }}"
-      owner: {{ ansible_user }}
-      group=: users
-      mode: 0644
-      sha256sum: {{ seddms_sha256sum }}
+     url: "{{ seddms_mirror }}/{{ seddms_version }}/{{ seddms_filename }}"
+     dest: "{{ ansible_data_path }}/{{ geoserver_redis_filename }}"
+     owner: {{ ansible_user }}
+     group=: users
+     mode: 0644
+     sha256sum: {{ seddms_sha256sum }}
