@@ -3,10 +3,11 @@
 # just a code concept I need more technical background
 # - How can i get vars
 # - How can i set vars via ENVIRONMENT
-QUIKSTART_URL: https://sourceforge.net/projects/seeddms/files/seeddms-5.1.8/seeddms-quickstart-5.1.8.tar.gz
+
+seddms_version: "6.0.14"
+QUIKSTART_URL: "https://sourceforge.net/projects/seeddms/files/seeddms-{{ seddms_version }}/seeddms-quickstart-{{ seddms_version }}.tar.gz"
 seddms_mirror: https://sourceforge.net/projects/seeddms/files/
-seddms_version: 5.1.8
-seddms_filename: tar.gz
+
 
 SEEDDMS_CONF: conf/settings.xml
 SEEDMS_LOGIN: admin
